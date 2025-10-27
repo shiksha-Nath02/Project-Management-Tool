@@ -1,0 +1,30 @@
+-DRAG AND DROP 
+    to perform drag and drop ops
+        Drag & drop library (like react-beautiful-dnd or dnd-kit).
+        Store columns + tasks in state.
+        Allow dragging tasks between columns.
+
+        >> npm install @dnd-kit/core 
+        @dnd-kit/core → base drag-and-drop functionality
+
+        @dnd-kit/sortable → makes lists/columns sortable (great for Kanban)
+
+        @dnd-kit/modifiers → optional helpers (like snapping, restricting movement, etc.)
+
+-ANT
+    If you mean Ant Design (AntD):
+
+    It’s a React-based UI framework built by Alibaba.
+
+    Provides ready-to-use components like buttons, forms, tables, modals, layouts, etc.
+
+    Has a clean, enterprise-style design system.
+
+    Often used with React projects to speed up frontend development
+
+    >>npm i ant
+
+CHART.JS
+
+    npm install chart.js react-chartjs-2
+

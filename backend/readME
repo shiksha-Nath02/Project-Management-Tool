@@ -1,0 +1,19 @@
+postgres-
+    db- projectmanagement
+    user- ss 
+    password- ss
+
+    CREATE USER ss WITH PASSWORD 'ss';
+    GRANT ALL PRIVILEGES ON DATABASE projectmanagement TO ss;
+
+psql -U ss -h localhost -p 5432 -d projectmanagement 
+
+psql -U postgres -h localhost -p 5432
+    >> ALTER DATABASE projectmanagement OWNER TO ss
+    >> ALTER USER ss CREATEDB;
+
+    
+(to enter db)
+
+    npx prisma migrate dev --name initialising 
+    

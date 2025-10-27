@@ -1,0 +1,59 @@
+/* Board container */
+.kanban-board {
+    display: flex;
+    gap: 20px;
+    /* space between columns */
+    padding: 20px;
+    flex: 1;
+    /* fill available space */
+    background-color: #f9fafb;
+    /* light gray */
+    overflow-x: auto;
+    /* scroll if too many columns */
+}
+
+/* Columns */
+.kanban-column {
+    flex: 1;
+    /* equal width */
+    min-width: 250px;
+    /* don’t shrink too small */
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Column headers */
+.kanban-column h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+/* Tasks */
+.task-card {
+    background-color: #e0f2fe;
+    /* light blue */
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e3a8a;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.task-card:hover {
+    background-color: #bae6fd;
+    /* darker blue on hover */
+}
+
+.task-card:active {
+    transform: scale(0.98);
+}
