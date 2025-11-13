@@ -8,6 +8,7 @@ import Kanban from './components/Kanban'
 import NewProject from './pages/NewProject'
 import BarChart from './components/BarChart'
 import NavBar from './components/NavBar'
+import NoProject from './components/NoProject'
 
 const App = () => {
   return (
@@ -19,9 +20,11 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/project" element={<MyProjects/>} >
+          <Route index element={<NoProject />}></Route>
           <Route path=':id' element={<Kanban></Kanban>}></Route>
         </Route>
         <Route path='/newproject' element={<NewProject/>}>
+          <Route index element={<NoProject />}></Route>
           <Route path=':id' element={<BarChart/>} ></Route>
         </Route>
       </Routes>

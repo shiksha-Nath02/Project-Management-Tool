@@ -36,24 +36,31 @@
 
 /* Tasks */
 .task-card {
-    background-color: #e0f2fe;
-    /* light blue */
-    border-radius: 6px;
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    font-size: 14px;
+    background: #020a12;
+    /* subtle off-white */
+    border: 1px solid #dbeafe;
+    /* soft blue border */
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    font-size: 15px;
     font-weight: 500;
     color: #1e3a8a;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* navy text for clarity */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     cursor: grab;
-    transition: transform 0.1s, background-color 0.2s;
+    transition: all 0.2s ease-in-out;
 }
 
 .task-card:hover {
-    background-color: #bae6fd;
-    /* darker blue on hover */
+    background: #e0f2fe;
+    /* light blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .task-card:active {
+    cursor: grabbing;
     transform: scale(0.98);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }

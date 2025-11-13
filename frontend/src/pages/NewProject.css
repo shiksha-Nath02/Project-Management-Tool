@@ -199,10 +199,16 @@
 .outlet-container {
     flex-grow: 1;
     /* take remaining width */
-    padding: 20px;
+    padding: 30px;
     /* spacing from edges */
     background: #f1f5f9;
     /* light background to differentiate */
     overflow-y: auto;
     /* scroll if content overflows */
+
+    /* Center the content */
+    display: flex;
+    justify-content: center;
+    min-height: 400px;
+    
 }

@@ -5,6 +5,6 @@ const auth=require("../middleware/user");
 
 router.post("/getTaskCount",auth,taskCntrl.getTasksCount);
 router.post("/getTask",auth,taskCntrl.getTasks);
-router.put("/updateTask",taskCntrl.updateTasks);
+router.put("/updateTask",auth,taskCntrl.updateTasks);
 
 module.exports=router;
