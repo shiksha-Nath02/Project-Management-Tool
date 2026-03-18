@@ -1,4 +1,269 @@
 {
-  "databaseType": "sql",
-  "tables": []
+  "databaseType": "prisma",
+  "tables": [
+    {
+      "name": "User",
+      "fields": [
+        {
+          "name": "id",
+          "type": "Int",
+          "nullable": false,
+          "primary": true,
+          "unique": false,
+          "default": "@default(autoincrement())"
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "nullable": false,
+          "primary": false,
+          "unique": true,
+          "default": null
+        },
+        {
+          "name": "password",
+          "type": "String",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        },
+        {
+          "name": "username",
+          "type": "String",
+          "nullable": true,
+          "primary": false,
+          "unique": false,
+          "default": null
+        },
+        {
+          "name": "createdAt",
+          "type": "DateTime",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": "@default(now())"
+        },
+        {
+          "name": "updatedAt",
+          "type": "DateTime",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        }
+      ],
+      "relations": [
+        {
+          "field": "role",
+          "target": "Role",
+          "type": "one-to-one",
+          "foreignKey": null,
+          "references": null
+        },
+        {
+          "field": "tasks",
+          "target": "Task",
+          "type": "one-to-many",
+          "foreignKey": null,
+          "references": null
+        },
+        {
+          "field": "memberships",
+          "target": "ProjectMember",
+          "type": "one-to-many",
+          "foreignKey": null,
+          "references": null
+        }
+      ]
+    },
+    {
+      "name": "Project",
+      "fields": [
+        {
+          "name": "id",
+          "type": "Int",
+          "nullable": false,
+          "primary": true,
+          "unique": false,
+          "default": "@default(autoincrement())"
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        }
+      ],
+      "relations": [
+        {
+          "field": "members",
+          "target": "ProjectMember",
+          "type": "one-to-many",
+          "foreignKey": null,
+          "references": null
+        },
+        {
+          "field": "columns",
+          "target": "Column",
+          "type": "one-to-many",
+          "foreignKey": null,
+          "references": null
+        }
+      ]
+    },
+    {
+      "name": "ProjectMember",
+      "fields": [
+        {
+          "name": "id",
+          "type": "Int",
+          "nullable": false,
+          "primary": true,
+          "unique": false,
+          "default": "@default(autoincrement())"
+        },
+        {
+          "name": "projectId",
+          "type": "Int",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        },
+        {
+          "name": "userId",
+          "type": "Int",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        }
+      ],
+      "relations": [
+        {
+          "field": "member",
+          "target": "User",
+          "type": "many-to-one",
+          "foreignKey": "userId",
+          "references": "id"
+        },
+        {
+          "field": "project",
+          "target": "Project",
+          "type": "many-to-one",
+          "foreignKey": "projectId",
+          "references": "id"
+        }
+      ]
+    },
+    {
+      "name": "Column",
+      "fields": [
+        {
+          "name": "id",
+          "type": "Int",
+          "nullable": false,
+          "primary": true,
+          "unique": false,
+          "default": "@default(autoincrement())"
+        },
+        {
+          "name": "projectId",
+          "type": "Int",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        }
+      ],
+      "relations": [
+        {
+          "field": "project",
+          "target": "Project",
+          "type": "many-to-one",
+          "foreignKey": "projectId",
+          "references": "id"
+        },
+        {
+          "field": "tasks",
+          "target": "Task",
+          "type": "one-to-many",
+          "foreignKey": null,
+          "references": null
+        }
+      ]
+    },
+    {
+      "name": "Task",
+      "fields": [
+        {
+          "name": "id",
+          "type": "Int",
+          "nullable": false,
+          "primary": true,
+          "unique": false,
+          "default": "@default(autoincrement())"
+        },
+        {
+          "name": "columnId",
+          "type": "Int",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        },
+        {
+          "name": "assigneeId",
+          "type": "Int",
+          "nullable": false,
+          "primary": false,
+          "unique": false,
+          "default": null
+        }
+      ],
+      "relations": [
+        {
+          "field": "assignee",
+          "target": "User",
+          "type": "many-to-one",
+          "foreignKey": "assigneeId",
+          "references": "id"
+        },
+        {
+          "field": "column",
+          "target": "Column",
+          "type": "many-to-one",
+          "foreignKey": "columnId",
+          "references": "id"
+        }
+      ]
+    }
+  ]
 }
