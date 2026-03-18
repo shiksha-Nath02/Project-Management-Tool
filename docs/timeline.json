@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "version": 1,
+    "title": "Project Evolution"
+  },
+  "phases": [
+    {
+      "id": "phase-1",
+      "title": "huhuh",
+      "description": "huhuh",
+      "date": "2026-03-19",
+      "commit": "667ce76b948cc0b0f22575be1bf971359c09e5e0",
+      "author": "shiksha-Nath02",
+      "status": "completed",
+      "tags": [],
+      "filesChanged": [
+        "frontend/.gitignore",
+        "frontend/README.md",
+        "frontend/Readme",
+        "frontend/eslint.config.js",
+        "frontend/index.html",
+        "frontend/package-lock.json",
+        "frontend/package.json",
+        "frontend/public/vite.svg",
+        "frontend/src/App.jsx",
+        "frontend/src/api/auth.js",
+        "frontend/src/components/BarChart.jsx",
+        "frontend/src/components/Draggable.css",
+        "frontend/src/components/Draggable.jsx",
+        "frontend/src/components/Droppable.css",
+        "frontend/src/components/Droppable.jsx",
+        "frontend/src/components/Kanban.css",
+        "frontend/src/components/Kanban.jsx",
+        "frontend/src/components/Loader.jsx",
+        "frontend/src/components/NavBar.css",
+        "frontend/src/components/NavBar.jsx",
+        "frontend/src/components/NoProject.jsx",
+        "frontend/src/main.jsx",
+        "frontend/src/pages/Dashboard.jsx",
+        "frontend/src/pages/Login.css",
+        "frontend/src/pages/Login.jsx",
+        "frontend/src/pages/MyProjects.css",
+        "frontend/src/pages/MyProjects.jsx",
+        "frontend/src/pages/NewProject.css",
+        "frontend/src/pages/NewProject.jsx",
+        "frontend/src/pages/Signup.css",
+        "frontend/src/pages/Signup.jsx",
+        "frontend/src/services/api.js",
+        "frontend/src/store/store.js",
+        "frontend/vite.config.js"
+      ]
+    }
+  ]
+}

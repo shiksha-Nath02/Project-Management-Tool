@@ -1,32 +1,6 @@
 {
   "nodes": [
     {
-      "id": "backend",
-      "label": "Express API",
-      "category": "Server",
-      "description": "Node.js Express backend",
-      "stack": [
-        "Node.js",
-        "Express"
-      ]
-    },
-    {
-      "id": "prisma",
-      "label": "Prisma ORM",
-      "category": "ORM",
-      "description": "Database ORM layer",
-      "stack": [
-        "Prisma"
-      ]
-    },
-    {
-      "id": "database",
-      "label": "Database",
-      "category": "Database",
-      "description": "Relational database",
-      "stack": []
-    },
-    {
       "id": "authController.js",
       "label": "authController.js",
       "category": "Controller",
@@ -77,18 +51,6 @@
     }
   ],
   "edges": [
-    {
-      "id": "backend-prisma",
-      "from": "backend",
-      "to": "prisma",
-      "label": "ORM Layer"
-    },
-    {
-      "id": "prisma-database",
-      "from": "prisma",
-      "to": "database",
-      "label": "SQL Queries"
-    },
     {
       "id": "authController.js-prisma",
       "from": "authController.js",
