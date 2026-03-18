@@ -1,0 +1,147 @@
+{
+  "nodes": [
+    {
+      "id": "backend",
+      "label": "Express API",
+      "category": "Server",
+      "description": "Node.js Express backend",
+      "stack": [
+        "Node.js",
+        "Express"
+      ]
+    },
+    {
+      "id": "prisma",
+      "label": "Prisma ORM",
+      "category": "ORM",
+      "description": "Database ORM layer",
+      "stack": [
+        "Prisma"
+      ]
+    },
+    {
+      "id": "database",
+      "label": "Database",
+      "category": "Database",
+      "description": "Relational database",
+      "stack": []
+    },
+    {
+      "id": "authController.js",
+      "label": "authController.js",
+      "category": "Controller",
+      "description": "Source file",
+      "stack": []
+    },
+    {
+      "id": "projectController.js",
+      "label": "projectController.js",
+      "category": "Controller",
+      "description": "Source file",
+      "stack": []
+    },
+    {
+      "id": "taskController.js",
+      "label": "taskController.js",
+      "category": "Controller",
+      "description": "Source file",
+      "stack": []
+    },
+    {
+      "id": "user.js",
+      "label": "user.js",
+      "category": "File",
+      "description": "Source file",
+      "stack": []
+    },
+    {
+      "id": "auth.js",
+      "label": "auth.js",
+      "category": "File",
+      "description": "Source file",
+      "stack": []
+    },
+    {
+      "id": "project.js",
+      "label": "project.js",
+      "category": "File",
+      "description": "Source file",
+      "stack": []
+    },
+    {
+      "id": "task.js",
+      "label": "task.js",
+      "category": "File",
+      "description": "Source file",
+      "stack": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "backend-prisma",
+      "from": "backend",
+      "to": "prisma",
+      "label": "ORM Layer"
+    },
+    {
+      "id": "prisma-database",
+      "from": "prisma",
+      "to": "database",
+      "label": "SQL Queries"
+    },
+    {
+      "id": "authController.js-prisma",
+      "from": "authController.js",
+      "to": "prisma",
+      "label": "file-prisma"
+    },
+    {
+      "id": "projectController.js-prisma",
+      "from": "projectController.js",
+      "to": "prisma",
+      "label": "file-prisma"
+    },
+    {
+      "id": "taskController.js-prisma",
+      "from": "taskController.js",
+      "to": "prisma",
+      "label": "file-prisma"
+    },
+    {
+      "id": "user.js-prisma",
+      "from": "user.js",
+      "to": "prisma",
+      "label": "file-prisma"
+    },
+    {
+      "id": "auth.js-authController.js",
+      "from": "auth.js",
+      "to": "authController.js",
+      "label": "route-controller"
+    },
+    {
+      "id": "project.js-user.js",
+      "from": "project.js",
+      "to": "user.js",
+      "label": "route-middleware"
+    },
+    {
+      "id": "project.js-projectController.js",
+      "from": "project.js",
+      "to": "projectController.js",
+      "label": "route-controller"
+    },
+    {
+      "id": "task.js-user.js",
+      "from": "task.js",
+      "to": "user.js",
+      "label": "route-middleware"
+    },
+    {
+      "id": "task.js-taskController.js",
+      "from": "task.js",
+      "to": "taskController.js",
+      "label": "route-controller"
+    }
+  ]
+}
